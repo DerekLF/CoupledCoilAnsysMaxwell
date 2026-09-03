@@ -17,10 +17,12 @@ The primary goal of this tool is to build perfectly rounded, equation-based spir
 * **Libraries:** `ansys.aedt.core`, `datetime`, `math`.
 
 ## Usage
-1. Open Ansys Electronics Desktop.
-2. Run the script via the AEDT Python console or an external IDE connected to the active AEDT session.
-3. The script will automatically create a new design timestamped as `CoupledCoilDesign_YYYYMMDD_HHMM`.
-4. Variables are pushed directly to the Maxwell design space, allowing you to tweak parameters (like `Main_Turns` or `WireDiameter`) directly within the Maxwell GUI after generation.
+1. Open Ansys Electronics Desktop and ensure a project is open.
+2. Run the script via an external IDE or the AEDT script console connected to your active session.
+3. The script initializes and pushes all parameters into Ansys Maxwell as **Design Variables**.
+4. If you uncomment the interactive pause line (`#input(f"Edit base variables, then press ENTER...")`) in the script, execution will pause after variable initialization. 
+5. While the script is paused, navigate to the **Design Properties** window in the Maxwell GUI to modify your parameters (such as `Main_Turns`, `WireDiameter`, or `Main_InnerDiameter`) dynamically before geometry generation begins.
+6. Press **Enter** in your console to resume execution, and the script will build the model based on your updated variables.
 
 ## Known Limitations
 
